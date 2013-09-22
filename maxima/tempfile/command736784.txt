@@ -1,0 +1,3 @@
+solve([x^2-4=0], [x]);
+stringout("tempfile/result736784.txt", %o2);
+quit();

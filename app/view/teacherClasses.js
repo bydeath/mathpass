@@ -1,0 +1,9 @@
+Ext.define('MathPASS.view.teacherClasses',{
+    extend:'Ext.Container',
+    xtype:'panel_teachersClasses',
+    config:{
+        items:[
+    dataview
+    ]
+    }
+});
