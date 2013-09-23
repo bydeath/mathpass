@@ -316,6 +316,18 @@
         "name": "Class",
         "fields": "id:auto:null,name:auto:null"
       }
+    },
+    "app/model/Assignment.js": {
+      "source": "{modelFileName}.js.tpl.merge",
+      "version": "b440abe61f1cfb3bbc31c9554696b4c7e9e2c329",
+      "parameters": {
+        "appName": "MathPASS",
+        "modelNamespace": "MathPASS.model",
+        "baseClass": "Ext.data.Model",
+        "modelFileName": "Assignment",
+        "name": "Assignment",
+        "fields": "assignmentId:auto:null,assignmentsTitle:auto:null,_list_assignmenttypes:auto:null,shared:auto:null,startDate:auto:null,dueDate:auto:null"
+      }
     }
   }
 }

@@ -67,7 +67,8 @@ Ext.application({
     'pcourse',
     'Chapter',
     'Problem',
-    'Class'
+    'Class',
+    'Assignment'
 	],
 	controllers:[
     'register',
@@ -80,7 +81,8 @@ Ext.application({
         'Chapter',
         'pcourse',
         'Problem',
-        'Class'
+        'Class',
+        'Assignment_teacher'
     ],
 	launch: function() {
 		// Initialize the main view
