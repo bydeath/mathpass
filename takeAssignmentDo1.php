@@ -471,7 +471,13 @@ function GenDescription($num,$type)
         <link rel="stylesheet" type="text/css" href="globals.css" />
         <script type="text/javascript" src="scripts/dialog.js"></script>
         <script type="text/javascript" src="base/scripts/globals.js"></script>
-        <script type="text/javascript" src="mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <!--  <script type="text/javascript" src="mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
+<script src="mathjax/MathJax.js"> 
+    MathJax.Hub.Config({ 
+    extensions: ["mml2jax.js"], 
+    jax: ["input/MathML", "output/HTML-CSS"] 
+    }); 
+</script> 
 <script language="javascript">
 var m_seconds=0;
 var m_lastConverted=0;	
@@ -3287,6 +3293,9 @@ function GenericCode()
 //	$lay_answerChecker->Render();
 //	$lay_answerChecker->Dispose();
 ?>
+<div id="MathOutput">
+You typed: ${}$
+</div>
     <form id="frm_body" name="frm_body" method="post" action="takeAssignmentSummary.php">
         <input type="hidden" id="txt_started" name="txt_started" value="<? echo(mktime()); ?>" />
         <input type="hidden" id="txt_question" name="txt_question" value="" />

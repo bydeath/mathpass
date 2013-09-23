@@ -1,0 +1,25 @@
+Ext.define('MathPASS.view.exportgrade',{
+    extend:'Ext.Container',
+    requires:['MathPASS.model.Class'],
+    xtype:'exportgradeview',
+    config:{
+        layout:{
+            type:'vbox'
+        },
+        items:[
+        {
+            xtype:'selectfield',
+            id:'classforteacSelectfield',
+            name:'class',
+            valueField:'courseId',
+            label:'Select Class',
+            displayField:'title',
+            store:'Class'
+            },
+        {
+            xtype:'panel',
+            id:'a'
+        }
+        ]
+    }
+});

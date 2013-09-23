@@ -13,7 +13,7 @@ Ext.define('MathPASS.view.teacherMain', {
         'MathPASS.view.teacherpage',
         'MathPASS.view.teacherItemAnalysis',
         'MathPASS.view.teacherAssignments',
-        'MathPASS.view.teacherExportGrade',
+        'MathPASS.view.exportgrade',
         'MathPASS.view.information',
         'MathPASS.store.userinfo',
         'MathPASS.model.userinfo'
@@ -57,7 +57,7 @@ Ext.define('MathPASS.view.teacherMain', {
             {
                 title: 'ExportGrade',
                 iconCls:'home',
-                xtype:'teacherExportGradeview',
+                xtype:'exportgradeview',
                 styleHtmlContent: true,
                 scrollable: true
             },

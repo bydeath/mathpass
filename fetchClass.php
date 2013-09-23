@@ -1,14 +1,10 @@
 <?
 include_once("databaseManager.php");
 $con=new DatabaseManager();
-/*$link=mysql_connect("localhost","root","890524") or die(mysql_error());
-mysql_select_db("mathpass");
-mysql_query("SET NAMES UTF8");
-$result=mysql_query($sql,$link);
- */
-	$sql="SELECT pcourseid,name";
-	$sql.=" FROM pcourse";
-	$sql.=" order by name";
+	$sql="SELECT courseId,title,days,room";
+	$sql.=" FROM courses";
+	$sql.=" WHERE ( fk_user_teacher=2227 AND active=1 )";
+	$sql.=" ORDER BY title";
 $result=$con->Query($sql);
 if(mysql_num_rows($result)>0){
     while($obj=mysql_fetch_object($result)){

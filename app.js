@@ -50,7 +50,7 @@ Ext.application({
     'administratorProblems',
     'administratorUsers',
     'teacherAssignments',
-    'teacherExportGrade',
+    'exportgrade',
     'teacherItemAnalysis',
     'teacherMain',
     'teacherpage',
@@ -67,6 +67,7 @@ Ext.application({
     'pcourse',
     'Chapter',
     'Problem',
+    'Class'
 	],
 	controllers:[
     'register',
@@ -78,7 +79,8 @@ Ext.application({
     'userinfo',
         'Chapter',
         'pcourse',
-        'Problem'
+        'Problem',
+        'Class'
     ],
 	launch: function() {
 		// Initialize the main view

@@ -2180,7 +2180,7 @@ function test(str)
         //  Get the element jax when MathJax has produced it.
         //
         QUEUE.Push(function () {
-          math = MathJax.Hub.getAllJax("present1");
+          math = MathJax.Hub.getAllJax("MathOutput")[0];
           console.log('math',math);
         });
 
@@ -2189,12 +2189,12 @@ function test(str)
         //  math entered by the user
         //
         window.UpdateMath = function (TeX) {
-          QUEUE.Push(["Text",math,"\\displaystyle{"+TeX+"}"]);
+          QUEUE.Push(["Text",math,TeX]);
         }
       })();
 function doIP(inf,pre)
 {
-    console.log('pre',pre);
+  /*  console.log('pre',pre);
  try{
 	 var minfix=document.getElementById(inf);
 	 var divP=document.getElementById(pre);
@@ -2213,13 +2213,15 @@ function doIP(inf,pre)
 	 while( divP.lastChild )
 		 divP.removeChild( divP.lastChild );
 	 divP.appendChild(mpresent);
-	}catch(e)
-	{
+     */
+     UpdateMath("<math><mi>a</mi></math>");
 	}
+   // catch(e)
+	//{
+	//}
 //  console.log('0asd');
-     UpdateMath("a/b");
+    // UpdateMath("a/b");
 //  console.log('asd');
-}
 function showinfix(infixid)
 {
 	var infix=document.getElementById(infixid);
