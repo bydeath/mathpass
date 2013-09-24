@@ -29,9 +29,9 @@ view:[
 {
     xtype: 'dataview',
     store:'Assignment_teacher',
-itemTpl: '<div>{assignmentTitle}</div>',
+    baseCls:'user',
+itemTpl: '<div>{assignmentTitle}</div><div>{assignmentType}</div><div>{startDate}</div><div>{dueDate}</div>',
     height:500,
-    flex: 5
 }
         ]
     }
