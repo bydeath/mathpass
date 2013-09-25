@@ -3293,6 +3293,28 @@ function GenericCode()
 //	$lay_answerChecker->Render();
 //	$lay_answerChecker->Dispose();
 ?>
+<script>
+(function () {
+        var QUEUE = MathJax.Hub.queue;  // shorthand for the queue
+        var math = null;                // the element jax for the math output.
+
+        //
+        //  Get the element jax when MathJax has produced it.
+        //
+        QUEUE.Push(function () {
+          math = MathJax.Hub.getAllJax("MathOutput")[0];
+          console.log('math',math);
+        });
+
+        //
+        //  The onchange event handler that typesets the
+        //  math entered by the user
+        //
+        window.UpdateMath = function (TeX) {
+          QUEUE.Push(["Text",math,TeX]);
+        }
+      })();
+</script>
 <div id="MathOutput">
 You typed: ${}$
 </div>

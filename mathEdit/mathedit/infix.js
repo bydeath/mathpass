@@ -2172,26 +2172,6 @@ function test(str)
 
 }
 
-(function () {
-        var QUEUE = MathJax.Hub.queue;  // shorthand for the queue
-        var math = null;                // the element jax for the math output.
-
-        //
-        //  Get the element jax when MathJax has produced it.
-        //
-        QUEUE.Push(function () {
-          math = MathJax.Hub.getAllJax("MathOutput")[0];
-          console.log('math',math);
-        });
-
-        //
-        //  The onchange event handler that typesets the
-        //  math entered by the user
-        //
-        window.UpdateMath = function (TeX) {
-          QUEUE.Push(["Text",math,TeX]);
-        }
-      })();
 function doIP(inf,pre)
 {
   /*  console.log('pre',pre);
@@ -2214,7 +2194,7 @@ function doIP(inf,pre)
 		 divP.removeChild( divP.lastChild );
 	 divP.appendChild(mpresent);
      */
-     UpdateMath("<math><mi>a</mi></math>");
+     UpdateMath("<math xmlns:mml='http://www.w3.org/1998/Math/MathML' xmlns='http://www.w3.org/1998/Math/MathML'><msup><mi xref='3'>x</mi><mi xref='4'>2</mi></msup></math>");
 	}
    // catch(e)
 	//{
