@@ -2174,26 +2174,28 @@ function test(str)
 
 function doIP(inf,pre)
 {
-  /*  console.log('pre',pre);
- try{
-	 var minfix=document.getElementById(inf);
+    console.log('pre',pre);
+// try{
+//	 var minfix=document.getElementById(inf);
 	 var divP=document.getElementById(pre);
-	 if(minfix.value=="" && divP.hasChildNodes) 
-	 {
-	   	divP.removeChild(divP.firstChild);
-   }
-   
-   if(minfix.value=="")
-   {
-//   	 for(var i=1;i<=8;i++)
-        divP.appendChild(document.createTextNode("\u00a0"));
-   }
-   
-	 var mpresent=convertToPresentDOM(minfix.value,document);
-	 while( divP.lastChild )
-		 divP.removeChild( divP.lastChild );
-	 divP.appendChild(mpresent);
-     */
+	 console.log("divP:",divP);
+	 console.log("MathOutput:",MathOutput);
+//	 if(minfix.value=="" && divP.hasChildNodes) 
+//	 {
+//	   	divP.removeChild(divP.firstChild);
+//   }
+//   
+//   if(minfix.value=="")
+//   {
+////   	 for(var i=1;i<=8;i++)
+//        divP.appendChild(document.createTextNode("\u00a0"));
+//   }
+//   
+//	 var mpresent=convertToPresentDOM(minfix.value,document);
+//	 while( divP.lastChild )
+//		 divP.removeChild( divP.lastChild );
+//	 divP.appendChild(mpresent);
+     
      UpdateMath("<math xmlns:mml='http://www.w3.org/1998/Math/MathML' xmlns='http://www.w3.org/1998/Math/MathML'><msup><mi xref='3'>x</mi><mi xref='4'>2</mi></msup></math>");
 	}
    // catch(e)

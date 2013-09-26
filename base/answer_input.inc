@@ -22,7 +22,7 @@
 
 function answer_input($number, $a_array)
 {
-  $i="		<table id='MathEditI' class='MathEditI'><tr><td><label>Display:</label></td><td><div class='dis' id='present".$number."' onClick='showinfix(\"infix_".$number."\")'>&nbsp</div></td></tr><br>";
+  $i="		<table id='MathEditI' class='MathEditI'><tr><td><label>Display:</label></td><td><div id='present".$number."' ><math></math></div></td></tr><br>";
   $i.="   <tr><td><label for='infix_".$number."'>Answer:</label></td><td><input name='infix_".$number."' type='text' class='in' id='infix_".$number."' onKeyUp=doIP('infix_".$number."','present".$number."')  size='26'></input></td></tr></table>";
   return $i;
 }

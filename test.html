@@ -1,0 +1,33 @@
+<script src="mathjax/MathJax.js"> 
+    MathJax.Hub.Config({ 
+    extensions: ["mml2jax.js"], 
+    jax: ["input/MathML", "output/HTML-CSS"] 
+    }); 
+</script>
+<script>
+(function () {
+        var QUEUE = MathJax.Hub.queue;  // shorthand for the queue
+        var math = null;                // the element jax for the math output.
+
+        //
+        //  Get the element jax when MathJax has produced it.
+        //
+        QUEUE.Push(function () {
+          math = MathJax.Hub.getAllJax("MathOutput")[0];
+          console.log('math',math);
+        });
+
+        //
+        //  The onchange event handler that typesets the
+        //  math entered by the user
+        //
+        window.UpdateMath = function (TeX) {
+        	alert(TeX);
+          QUEUE.Push(["Text",math,TeX]);
+        }
+      })();
+</script>
+<textarea onKeyUp="UpdateMath(this.value)" cols="100"></textarea>
+<div id="MathOutput" >
+You typed: ${}$
+</div>
