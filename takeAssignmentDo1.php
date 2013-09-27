@@ -3293,32 +3293,6 @@ function GenericCode()
 //	$lay_answerChecker->Render();
 //	$lay_answerChecker->Dispose();
 ?>
-<script>
-(function () {
-	var QUEUE = MathJax.Hub.queue;  // shorthand for the queue
-	var math = null;                // the element jax for the math output.
-
-	//
-	//  Get the element jax when MathJax has produced it.
-	//
-	QUEUE.Push(function () {
-		math = MathJax.Hub.getAllJax("present1")[0];
-		//math = MathJax.Hub.getAllJax("MathOutput")[0];
-		console.log('math',math);
-	});
-
-	//
-	//  The onchange event handler that typesets the
-	//  math entered by the user
-	//
-	window.UpdateMath = function (TeX) {
-		QUEUE.Push(["Text",math,TeX]);
-	}
-})();
-</script>
-<div id="MathOutput">
-You typed: <math></math>
-</div>
     <form id="frm_body" name="frm_body" method="post" action="takeAssignmentSummary.php">
 <input type="hidden" id="txt_started" name="txt_started" value="<? echo(mktime()); ?>" />
 <input type="hidden" id="txt_question" name="txt_question" value="" />

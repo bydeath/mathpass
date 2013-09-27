@@ -2149,9 +2149,7 @@ function GetMathMLExP(Expr,NameSpace)
 
 
 function test(str)
-{
-	var result;
-	result = convertToMathMLDOM(str);
+{ var result; result = convertToMathMLDOM(str);
 	var STR = GetMathMLEx(result);
 	
 	var dis = document.getElementById("display");
@@ -2171,7 +2169,43 @@ function test(str)
 	alert("Content Encoding:  "+STR);
 
 }
+(function () {
+	var QUEUE = MathJax.Hub.queue;  // shorthand for the queue
+	var math = null;                // the element jax for the math output.
 
+	//
+	//  Get the element jax when MathJax has produced it.
+	//
+	QUEUE.Push(function () {
+		math = MathJax.Hub.getAllJax("present1")[0];
+		//math = MathJax.Hub.getAllJax("MathOutput")[0];
+		console.log('math',math);
+	});
+
+	//
+	//  The onchange event handler that typesets the
+	//  math entered by the user
+	//
+	window.UpdateMath = function (TeX) {
+		QUEUE.Push(["Text",math,TeX]);
+	}
+})();
+function XMLtoString(elem){
+
+	var serialized;
+
+	try {
+		// XMLSerializer exists in current Mozilla browsers
+		serializer = new XMLSerializer();
+		serialized = serializer.serializeToString(elem);
+	} 
+	catch (e) {
+										// Internet Explorer has a different approach to serializing XML
+		serialized = elem.xml;
+	}
+
+	return serialized;
+}
 function doIP(inf,pre)
 {
 	console.log('pre',pre);
@@ -2179,7 +2213,6 @@ function doIP(inf,pre)
 		var minfix=document.getElementById(inf);
 		var divP=document.getElementById(pre);
 		console.log("divP:",divP);
-		console.log("MathOutput:",MathOutput);
 		if(minfix.value=="" && divP.hasChildNodes) 
 		{
 			divP.removeChild(divP.firstChild);
@@ -2191,12 +2224,13 @@ function doIP(inf,pre)
 		}
 
 		var mpresent=convertToPresentDOM(minfix.value,document);
-		console.log("mpresent",mpresent);
+		console.log("mpresent",XMLtoString(mpresent));
+		var math=XMLtoString(mpresent);
 		//	 while( divP.lastChild )
 			//		 divP.removeChild( divP.lastChild );
 		//	 divP.appendChild(mpresent);
-		var math='<math><mstyle mathsize="16pt"><mn>4</mn></mstyle></math>';
-		console.log("matha",math);
+//		var math='<math><mstyle mathsize="16pt"><mn>4</mn></mstyle></math>';
+//		console.log("matha",math);
 		UpdateMath(math);
 		//UpdateMath('<math><mstyle mathsize="16pt"><mn>4</mn></mstyle></math>');
 }
