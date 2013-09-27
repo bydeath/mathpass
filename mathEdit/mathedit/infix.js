@@ -2177,7 +2177,7 @@ function test(str)
 	//  Get the element jax when MathJax has produced it.
 	//
 	QUEUE.Push(function () {
-		math = MathJax.Hub.getAllJax("present1")[0];
+//		math = MathJax.Hub.getAllJax("present1")[0];
 		//math = MathJax.Hub.getAllJax("MathOutput")[0];
 		console.log('math',math);
 	});
@@ -2186,7 +2186,8 @@ function test(str)
 	//  The onchange event handler that typesets the
 	//  math entered by the user
 	//
-	window.UpdateMath = function (TeX) {
+	window.UpdateMath = function (TeX,displayDiv) {
+		math = MathJax.Hub.getAllJax(displayDiv)[0];
 		QUEUE.Push(["Text",math,TeX]);
 	}
 })();
@@ -2231,7 +2232,7 @@ function doIP(inf,pre)
 		//	 divP.appendChild(mpresent);
 //		var math='<math><mstyle mathsize="16pt"><mn>4</mn></mstyle></math>';
 //		console.log("matha",math);
-		UpdateMath(math);
+		UpdateMath(math,pre);
 		//UpdateMath('<math><mstyle mathsize="16pt"><mn>4</mn></mstyle></math>');
 }
 // catch(e)
