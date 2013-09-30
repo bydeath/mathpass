@@ -85,6 +85,10 @@ Ext.define('MathPASS.view.exportgrade',{
                         label: 'Number Correct out of Number of Questions'
                     }
                     ]  
+            },
+            {
+                xtype:button,
+                text:view the grade
             }
         ]
     }
