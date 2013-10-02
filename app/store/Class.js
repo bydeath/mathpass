@@ -1,44 +1,50 @@
-/**
- * @class voice.store.Chats
- * @extends Ext.data.Store
- * Description
- */
+//var userInfoData=Ext.getStore('UserInfo');
+//console.log('userinfo',userInfoData);
+//if(null!=userInfoData.getAt(0)){
+//    userId = userInfoData.getAt(0).get('userId');
+//};
 Ext.define('MathPASS.store.Class', {
     extend: 'Ext.data.Store',
     requires: [ 'MathPASS.model.Class' ],
-		
+
     config: {
-			model: 'MathPASS.model.Class',
-			storeId: 'Class',
-            autoLoad:true,
-            remoteFilter:true,
-            /*
-            data:[
-                {id:"1",name:"wang"},
-                {id:"2",name:"wang"},
-                {id:"3",name:"wang"}
-            ]
-            */
-      //      filters: [
-      //      {
-      //          propety: 'pcourseid',
-      //          value:9
-      //      }
-      //      ],
-            
-            proxy:{
-                type:'rest',
-                url:'fetchClass.php',
-                reader:{
-                    type:'json'
-                },
-                listeners: { 
-                    exception:function(proxy,response)
-                    {
-                        Ext.Msg.alert(Ext.decode(response.responseText).message);
-                    }
+        model: 'MathPASS.model.Class',
+        storeId: 'Class',
+        autoLoad:true,
+        remoteFilter:true,
+        /*
+        data:[
+        {id:"1",name:"wang"},
+        {id:"2",name:"wang"},
+        {id:"3",name:"wang"}
+        ]
+        */
+        filters: [
+            {
+                propety: 'pcourseid',
+                value: 2227
+            }
+        ],
+
+        proxy:{
+            type:'rest',
+            url:'fetchClass.php',
+            reader:{
+                type:'json'
+            },
+            listeners: { 
+                exception:function(proxy,response)
+                {
+                    Ext.Msg.alert(Ext.decode(response.responseText).message);
                 }
             }
-    }
+        }
+},
+listeners:{
+load:function (this, records, successful, operation, eOpts){
+console.log('store loading');
+Ext.Meg.alert("store loading");
+}
+}
 });
 

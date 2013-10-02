@@ -87,8 +87,8 @@ Ext.define('MathPASS.view.exportgrade',{
                     ]  
             },
             {
-                xtype:button,
-                text:view the grade
+                xtype:'button',
+                text:'view the grade'
             }
         ]
     }
