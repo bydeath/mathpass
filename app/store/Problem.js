@@ -12,16 +12,16 @@ Ext.define('MathPASS.store.Problem', {
 			storeId: 'Problem',
             autoLoad:true,
             remoteFilter:true,
-            filters: [
-            {
-                property: 'pcourseid',
-                value:9
-            },
-            {
-                property: 'chapterid',
-                value:24
-            }
-            ],
+            //filters: [
+            //{
+            //    property: 'pcourseid',
+            //    value:9
+            //},
+            //{
+            //    property: 'chapterid',
+            //    value:24
+            //}
+            //],
             proxy:{
                 type:'rest',
                 url:'fetchProblem.php',

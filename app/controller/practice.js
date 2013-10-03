@@ -37,6 +37,7 @@ button_takepractice:{
         this.getProblemdataview().getStore().filter('pcourseId',this.getCourseSelectfield().getRecord().get('pcourseid'));
         this.getProblemdataview().getStore().filter('chapterId',record.get('chapterId'));
         this.getProblemdataview().getStore().load();
+        this.getProblemdataview().getStore().load();
 
     },
    // chapterRefresh:function(dataview){

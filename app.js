@@ -77,7 +77,7 @@ Ext.application({
 	'practice'
 		],
 	stores:[
-		'userinfo',
+	'userinfo',
 	'Chapter',
 	'pcourse',
 	'Problem',

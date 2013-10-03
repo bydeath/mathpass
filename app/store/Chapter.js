@@ -12,12 +12,12 @@ Ext.define('MathPASS.store.Chapter', {
 			storeId: 'Chapter',
             autoLoad:true,
             remoteFilter:true,
-            filters: [
-            {
-                propety: 'pcourseid',
-                value:9
-            }
-            ],
+            //filters: [
+            //{
+            //    propety: 'pcourseid',
+            //    value:9
+            //}
+            //],
             
             proxy:{
                 type:'rest',
