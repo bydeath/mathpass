@@ -50,6 +50,7 @@ Ext.define('MathPASS.view.exportgrade',{
             },
             {
                 xtype: 'dataview',
+                id:'assignmentdataview',
                 store:'Assignment_teacher',
                 baseCls:'user',
                 items:[panel],
@@ -88,7 +89,8 @@ Ext.define('MathPASS.view.exportgrade',{
             },
             {
                 xtype:'button',
-                text:'view the grade'
+                text:'view the grade',
+                id:'viewgrade'
             }
         ]
     }

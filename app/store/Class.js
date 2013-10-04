@@ -6,9 +6,9 @@
 Ext.define('MathPASS.store.Class', {
     extend: 'Ext.data.Store',
     requires: [
-    'MathPASS.model.Class',
-    'MathPASS.model.userinfo',
-    'MathPASS.store.userinfo'
+        'MathPASS.model.Class',
+        'MathPASS.model.userinfo',
+        'MathPASS.store.userinfo'
     ],
 
     config: {
@@ -23,12 +23,12 @@ Ext.define('MathPASS.store.Class', {
         {id:"3",name:"wang"}
         ]
         */
-        filters: [
-            {
-                propety: 'pcourseid',
-                value: 2227
-            }
-        ],
+        //filters: [
+        //    {
+        //        propety: 'pcourseid',
+        //        value: 2227
+        //    }
+        //],
 
         proxy:{
             type:'rest',
@@ -42,31 +42,7 @@ Ext.define('MathPASS.store.Class', {
                     Ext.Msg.alert(Ext.decode(response.responseText).message);
                 }
             }
-        },
-listeners:{
-refresh:function (data, eOpts){
-console.log('store loading');
-Ext.Msg.alert("store loading");
-var userId="";
-var userInfoData=Ext.getStore('UserInfo');
-console.log('userinfo',userInfoData);
-if(null!=userInfoData.getAt(0)){
-    userId = userInfoData.getAt(0).get('userId');
-};
-console.log('userid:',userId);
-if(userId!="")
-{
-userInfoData.removeAll();
-userInfoData.clearFilter();
-userInfoData.filter(
-[
-{propety:"userID",value:userId}
-]
-);
-userInfoData.load();
-}
-}
-}
-}
+        }
+    }
 });
 

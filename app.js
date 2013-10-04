@@ -74,7 +74,8 @@ Ext.application({
 		'register',
 	'login',
 	'contactus',
-	'practice'
+	'practice',
+    'exportgrade'
 		],
 	stores:[
 	'userinfo',
