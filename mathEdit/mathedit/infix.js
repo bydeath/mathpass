@@ -2179,7 +2179,7 @@ function test(str)
 	QUEUE.Push(function () {
 //		math = MathJax.Hub.getAllJax("present1")[0];
 		//math = MathJax.Hub.getAllJax("MathOutput")[0];
-		console.log('math',math);
+		//console.log('math',math);
 	});
 
 	//
@@ -2209,11 +2209,11 @@ function XMLtoString(elem){
 }
 function doIP(inf,pre)
 {
-	console.log('pre',pre);
+	//console.log('pre',pre);
 	// try{
 		var minfix=document.getElementById(inf);
 		var divP=document.getElementById(pre);
-		console.log("divP:",divP);
+		//console.log("divP:",divP);
 		if(minfix.value=="" && divP.hasChildNodes) 
 		{
 			divP.removeChild(divP.firstChild);
@@ -2225,7 +2225,7 @@ function doIP(inf,pre)
 		}
 
 		var mpresent=convertToPresentDOM(minfix.value,document);
-		console.log("mpresent",XMLtoString(mpresent));
+		//console.log("mpresent",XMLtoString(mpresent));
 		var math=XMLtoString(mpresent);
 		//	 while( divP.lastChild )
 			//		 divP.removeChild( divP.lastChild );
