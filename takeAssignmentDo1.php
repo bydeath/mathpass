@@ -920,7 +920,7 @@ function checkanswer(k)
 							checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 							checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 							params="checkcmd="+encodeURIComponent(checkcmd);
-							send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+							send_request("maxima/aacs.php",params,prca);
 						} 
 				}	
 }
@@ -991,7 +991,7 @@ function checkanswerequ()
 						checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 						checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 						params="checkcmd="+encodeURIComponent(checkcmd);
-						send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+						send_request("maxima/aacs.php",params,prca);
 						return;
 					}
 				}
@@ -1033,7 +1033,7 @@ function checkanswerequ()
 						checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 						checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 						params="checkcmd="+encodeURIComponent(checkcmd);
-						send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+						send_request("maxima/aacs.php",params,prca);
 						return; 
 					}else if(result.value=="21")
 					{
@@ -1044,7 +1044,7 @@ function checkanswerequ()
 						checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 						checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 						params="checkcmd="+encodeURIComponent(checkcmd);
-						send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+						send_request("maxima/aacs.php",params,prca);
 						return; 
 					}else if(result.value=="22")
 					{
@@ -1055,7 +1055,7 @@ function checkanswerequ()
 						checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 						checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 						params="checkcmd="+encodeURIComponent(checkcmd);
-						send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+						send_request("maxima/aacs.php",params,prca);
 						return; 
 					}else if(result.value=="24")
 					{
@@ -1066,7 +1066,7 @@ function checkanswerequ()
 						checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 						checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 						params="checkcmd="+encodeURIComponent(checkcmd);
-						send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+						send_request("maxima/aacs.php",params,prca);
 						return; 
 					}	
 				}
@@ -1220,7 +1220,7 @@ function checkanswerline(t)
 						checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 						checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 						params="checkcmd="+encodeURIComponent(checkcmd);
-						send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+						send_request("maxima/aacs.php",params,prca);
 					}
 			}else
 					{
@@ -1254,7 +1254,7 @@ function checkanswerline(t)
 								checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 								checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 								params="checkcmd="+encodeURIComponent(checkcmd);
-								send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+								send_request("maxima/aacs.php",params,prca);
 							}
 					}
 		}else
@@ -1292,7 +1292,7 @@ function checkanswerline(t)
 									checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 									checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 									params="checkcmd="+encodeURIComponent(checkcmd);
-									send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+									send_request("maxima/aacs.php",params,prca);
 								}else
 								{
 									result.value="16";
@@ -1301,7 +1301,7 @@ function checkanswerline(t)
 									checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 									checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 									params="checkcmd="+encodeURIComponent(checkcmd);
-									send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+									send_request("maxima/aacs.php",params,prca);
 								}
 							}
 	}else if(t==1)
@@ -1311,7 +1311,7 @@ function checkanswerline(t)
 		checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 		checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 		params="checkcmd="+encodeURIComponent(checkcmd);
-		send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+		send_request("maxima/aacs.php",params,prca);
 	}
 }
 function checkanswerdomain2()
@@ -1419,7 +1419,7 @@ function checkanswerdomain()
 					checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 					checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 					params="checkcmd="+encodeURIComponent(checkcmd);
-					send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+					send_request("maxima/aacs.php",params,prca);
 				}
 		}else
 				{
@@ -1551,7 +1551,7 @@ function checkanswerinte(t,qt)
 				checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 				checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 				params="checkcmd="+encodeURIComponent(checkcmd);
-				send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+				send_request("maxima/aacs.php",params,prca);
 			}else if(uajson.infix_1==ana[1])
 			{
 				result.value="010";
@@ -1560,7 +1560,7 @@ function checkanswerinte(t,qt)
 				checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 				checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 				params="checkcmd="+encodeURIComponent(checkcmd);
-				send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+				send_request("maxima/aacs.php",params,prca);
 			}else if(uajson.infix_2==txt_array1)
 			{
 				result.value="001";
@@ -1569,7 +1569,7 @@ function checkanswerinte(t,qt)
 				checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 				checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 				params="checkcmd="+encodeURIComponent(checkcmd);
-				send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+				send_request("maxima/aacs.php",params,prca);
 			}else
 			{
 				result.value="000";
@@ -1578,7 +1578,7 @@ function checkanswerinte(t,qt)
 				checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 				checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 				params="checkcmd="+encodeURIComponent(checkcmd);
-				send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+				send_request("maxima/aacs.php",params,prca);
 			}
 		}else if(qt==2 && txt_array1=="not_used" && (uajson.infix_2!="" || (uajson.infix_3!="" && uajson.infix_3!=null)))
 		{
@@ -1636,7 +1636,7 @@ function checkanswerinte(t,qt)
 				checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 				checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 				params="checkcmd="+encodeURIComponent(checkcmd);
-				send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+				send_request("maxima/aacs.php",params,prca);
 			}
 		}else if(uajson.infix_2!="" && qt==3)
 		{
@@ -1685,7 +1685,7 @@ function checkanswerinte(t,qt)
 					checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 					checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 					params="checkcmd="+encodeURIComponent(checkcmd);
-					send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+					send_request("maxima/aacs.php",params,prca);
 				}
 		}else
 				{
@@ -1707,7 +1707,7 @@ function checkanswerinte(t,qt)
 		checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 		checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 		params="checkcmd="+encodeURIComponent(checkcmd);
-		send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+		send_request("maxima/aacs.php",params,prca);
 	}else if(t==2)
 	{
 		//params="expr1="+encodeURIComponent(uajson.infix_2)+"&expr2="+encodeURIComponent(txt_array1);
@@ -1715,7 +1715,7 @@ function checkanswerinte(t,qt)
 		checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 		checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 		params="checkcmd="+encodeURIComponent(checkcmd);
-		send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+		send_request("maxima/aacs.php",params,prca);
 	}else if(t==3)
 	{
 
@@ -1730,7 +1730,7 @@ function checkanswerinte(t,qt)
 		checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 		checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 		params="checkcmd="+encodeURIComponent(checkcmd);
-		send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+		send_request("maxima/aacs.php",params,prca);
 	}else if(t==4)
 	{
 		var txt_array1=txt_array.split("union");
@@ -1743,7 +1743,7 @@ function checkanswerinte(t,qt)
 		checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 		checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 		params="checkcmd="+encodeURIComponent(checkcmd);
-		send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+		send_request("maxima/aacs.php",params,prca);
 	}else if(t==5)
 	{
 		var txt_array1=txt_array.split("union");
@@ -1756,7 +1756,7 @@ function checkanswerinte(t,qt)
 		checkcmd+='[{"expr":"s1","encoding":"infix","role":"usrAnswer","value":"'+uajson.infix_0+'"},';
 		checkcmd+='{"expr":"u1","encoding":"infi","role":"stdAnswer","value":"'+txt_array+'"}]}]';
 		params="checkcmd="+encodeURIComponent(checkcmd);
-		send_request("http://localhost/MathPASS/maxima/aacs.php",params,prca);
+		send_request("maxima/aacs.php",params,prca);
 	}
 }
 function displayresult(k,rst)
