@@ -1,13 +1,13 @@
-var panel=Ext.create('Ext.Panel',{
-    docked:'top',
-    width:'100%',
-    layout:'hbox',
-    items:[
-        {
-            html:'<table class="dataintable"><tr><td>Assignmetn Name</td><td>Type</td><td>Start Date</td><td>Due Date</td></tr></table>'
-        }
-    ]
-});
+//var panel=Ext.create('Ext.Panel',{
+//    docked:'top',
+//    width:'100%',
+//    layout:'hbox',
+//    items:[
+//        {
+//            html:'<table class="dataintable"><tr><td>Assignmetn Name</td><td>Type</td><td>Start Date</td><td>Due Date</td></tr></table>'
+//        }
+//    ]
+//});
 Ext.define('MathPASS.view.exportgrade',{
     extend:'Ext.Container',
     requires:['MathPASS.model.Class'],
@@ -53,7 +53,20 @@ Ext.define('MathPASS.view.exportgrade',{
                 id:'assignmentdataview',
                 store:'Assignment_teacher',
                 baseCls:'user',
-                items:[panel],
+                items:[
+                    {
+
+                        xtype:"panel",
+                        docked:'top',
+                        width:'100%',
+                        layout:'hbox',
+                        items:[
+                            {
+                                html:'<table class="dataintable"><tr><td>Assignmetn Name</td><td>Type</td><td>Start Date</td><td>Due Date</td></tr></table>'
+                            }
+                        ]
+                    }
+                ],
                 itemTpl: '<div>{assignmentTitle}</div><div>{assignmentType}</div><div>{startDate}</div><div>{dueDate}</div>',
                 height:200,
             },
@@ -85,7 +98,7 @@ Ext.define('MathPASS.view.exportgrade',{
                         value: '3',
                         label: 'Number Correct out of Number of Questions'
                     }
-                    ]  
+                ]  
             },
             {
                 xtype:'button',

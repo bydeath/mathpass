@@ -13,8 +13,8 @@ Ext.define('MathPASS.view.information',{
     ],
     config:{
         //id:'information',
-        scroll: 'vertical',
-        layout: {type: 'vbox', align: 'center'},
+//        scroll: 'vertical',
+ //       layout: {type: 'vbox', align: 'center'},
         items:[
             {
                 xtype: 'titlebar',
