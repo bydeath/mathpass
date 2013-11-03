@@ -9,11 +9,11 @@ Ext.define('MathPASS.view.ChapterListItem', {
 
 	config: {
 		styleHtmlContent: true,
+        cls: 'chapter-item',
 		items: [
 		 {
 			xtype: 'label',
 			html: 'title',
-            baseCls: 'user',
 			itemId: 'myLabel',
 			flex: 1,
 		}]

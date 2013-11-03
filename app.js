@@ -21,7 +21,7 @@ Ext.Loader.setPath({
 
 Ext.application({
         name: 'MathPASS',
-
+        viewport: {},
         requires: [
         'Ext.MessageBox',
         'Ext.form.Panel',
