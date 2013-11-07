@@ -45,13 +45,17 @@ Ext.define('MathPASS.view.practice',{
                         xtype: 'chapterlistpanel',
                         height:500,
                         id:'chapterdataview',
-                        flex: 3
+                        flex: 8
+                    },
+                    {
+                   xtype:'spacer',
+                   flex:1
                     },
                     {
                         xtype: 'problemdataview',
                         id:'problemdataview',
                         height:500,
-                        flex: 5
+                        flex: 13
                     }
                 ]
             }

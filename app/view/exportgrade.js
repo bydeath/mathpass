@@ -1,13 +1,3 @@
-//var panel=Ext.create('Ext.Panel',{
-//    docked:'top',
-//    width:'100%',
-//    layout:'hbox',
-//    items:[
-//        {
-//            html:'<table class="dataintable"><tr><td>Assignmetn Name</td><td>Type</td><td>Start Date</td><td>Due Date</td></tr></table>'
-//        }
-//    ]
-//});
 Ext.define('MathPASS.view.exportgrade',{
     extend:'Ext.Container',
     requires:['MathPASS.model.Class'],
@@ -20,18 +10,11 @@ Ext.define('MathPASS.view.exportgrade',{
         layout:{
             type:'vbox'
         },
-        title:'afd',
         items:[
             {
                 xtype:'titlebar',
                 dock:'top',
                 title:'Export student grades'
-            },
-            {
-                styleHtmlContent: true,
-                html: [
-                    "<div><h3>Choose assignments which you want to export.</h3><h4>Step 1:Select Classes</h4></div>"
-                ]
             },
             {
                 xtype:'selectfield',
@@ -52,26 +35,40 @@ Ext.define('MathPASS.view.exportgrade',{
                 xtype: 'dataview',
                 id:'assignmentdataview',
                 store:'Assignment_teacher',
-                baseCls:'user',
+                baseCls:'assignment',
+                flex:'3',
                 items:[
                     {
 
                         xtype:"panel",
                         docked:'top',
-                        width:'100%',
                         layout:'hbox',
                         items:[
                             {
-                                html:'<table class="dataintable"><tr><td>Assignmetn Name</td><td>Type</td><td>Start Date</td><td>Due Date</td></tr></table>'
+                                baseCls:'assignment-title',
+                                html:'Assignment Name'
+                            },
+                            {
+                                baseCls:'assignment-title',
+                                html:'Type'
+                            },
+                            {
+                                baseCls:'assignment-title',
+                                html:'Start Date'
+                            },
+                            {
+                                baseCls:'assignment-title',
+                                html:'Due Date'
                             }
                         ]
                     }
                 ],
                 itemTpl: '<div>{assignmentTitle}</div><div>{assignmentType}</div><div>{startDate}</div><div>{dueDate}</div>',
-                height:200,
+                //height:200,
             },
             {
                 xtype:'panel',
+                flex:'3',
                 items: [
                     {
                         styleHtmlContent: true,

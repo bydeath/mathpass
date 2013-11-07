@@ -57,37 +57,38 @@ Ext.define('MathPASS.controller.practice',{
                     ptype+=","
                 }
                 ptype=ptype.substr(0,ptype.length-1);
-                var src="<iframe width=\"100%\" height=\"100%\" name=\"takeAssignmentDo1\" marginwidth=\"0\" marginheight=\"0\" frameborder=\"0\" src=\"takeAssignmentDo1.php?openmode=1&number=1&types=";
+                var src="<iframe width=\"100%\" height=\"600\" name=\"takeAssignmentDo1\" marginwidth=\"0\" marginheight=\"0\" frameborder=\"0\" src=\"takeAssignmentDo1.php?openmode=1&number=1&types=";
                 src+=ptype;
-                src+="\"><iframe>";
+                src+="\"></iframe>";
                 var formpanel=Ext.create('Ext.form.Panel',{
                     //hideOnMaskTap: false,
                     centered: true,
+                    fullscreen:'true',
                     height: '100%',
                     width: '100%',
                     layout: 'fit',
                     html: src,
-                    //items: [
-                    //    {
-                    //        docked:'top',
-                    //        xtype:'toolbar',
-                    //        title:'Practice'
-                    //    },
-                    //    {
-                    //        docked: 'bottom',
-                    //        xtype: 'toolbar',
-                    //        items: [
-                    //            {
-                    //                xtype: 'spacer'
-                    //            },
-                    //            {
-                    //                text: '取消',
-                    //                handler: function() {
-                    //                    formpanel.hide();
-                    //                }
-                    //            }]
-                    //    }
-                    //]
+                    items: [
+                        {
+                            docked:'top',
+                            xtype:'toolbar',
+                            title:'Practice'
+                        },
+                        {
+                            docked: 'bottom',
+                            xtype: 'toolbar',
+                            items: [
+                                {
+                                    xtype: 'spacer'
+                                },
+                                {
+                                    text: 'Close',
+                                    handler: function() {
+                                        formpanel.destroy();
+                                    }
+                                }]
+                        }
+                    ]
                 });
                 Ext.Viewport.add(formpanel);
                 //var link="takeAssignmentDo1.php?openmode=1&number=1&types="+ptype;

@@ -3455,7 +3455,6 @@ if(!($_GET["finish"]) && $openmode!=1)
 			<button type="button" id="btn_save" name="btn_save" onClick="javascript:save();" class="button1">Save Unfinished Work</button>&nbsp;
 			<button type="button" id="btn_submit" name="btn_submit" onClick="javascript:Submit();" class="button1">Submit Assignment</button></td>
 			<td align= "right" style="padding:0px 14px 0px 0px">
-			<button type="button" id="btn_close" onClick="javascript:winClose();" class="button1" class="button1">Close</button></td>
 		    </tr>
 		</table></td>
 	    </tr>

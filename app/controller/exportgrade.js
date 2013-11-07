@@ -4,17 +4,21 @@ Ext.define('MathPASS.controller.exportgrade', {
     config: {
         refs: {
           exportgradeview:'exportgradeview',
-          classselectfield:'classforteacSelectfield',
-          button_viewgrade:'viewgrade'
+          classselectfield:'#classforteacSelectfield',
+          button_viewgrade:'#viewgrade',
+          assignmentdataview:'#assignmentdataview'
         },
         control: {
-           classelectfield:{
+           classselectfield:{
                change:'classChanged' 
            } 
         }
     },
     classChanged:function(select,newValue,oldValue){
-        Ext.Msg.alert('classChanged');
+        console.log("class chenged");
+        this.getAssignmentdataview().getStore().clearFilter();
+        this.getAssignmentdataview().getStore().filter('courseid',newValue);                        
+        this.getAssignmentdataview().getStore().load();
     },
     //called when the Application is launched, remove if not needed
     launch: function(app) {

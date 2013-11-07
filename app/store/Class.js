@@ -23,12 +23,12 @@ Ext.define('MathPASS.store.Class', {
         {id:"3",name:"wang"}
         ]
         */
-        //filters: [
-        //    {
-        //        propety: 'pcourseid',
-        //        value: 2227
-        //    }
-        //],
+        filters: [
+            {
+                propety: 'pcourseid',
+                value: 2227
+            }
+        ],
 
         proxy:{
             type:'rest',

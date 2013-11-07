@@ -19,7 +19,7 @@ Ext.define('MathPASS.model.userinfo',{
             {name:'userId',type:'int'}
         ],
         proxy:{
-            type:'localstorage',
+            type:'sessionstorage',
             id:'testUserInfo'
         }
     }
