@@ -16,19 +16,12 @@ Ext.define('MathPASS.store.Class', {
         storeId: 'Class',
         autoLoad:true,
         remoteFilter:true,
-        /*
-        data:[
-        {id:"1",name:"wang"},
-        {id:"2",name:"wang"},
-        {id:"3",name:"wang"}
-        ]
-        */
-        filters: [
-            {
-                propety: 'pcourseid',
-                value: 2227
-            }
-        ],
+        //filters: [
+        //    {
+        //        propety: 'pcourseid',
+        //        value: 2227
+        //    }
+        //],
 
         proxy:{
             type:'rest',

@@ -74,11 +74,11 @@ Ext.define('MathPASS.controller.login',{
                         };
                         console.log('userid:',userId);
                         var teacherclass=this.getClassdataview().getStore();
-                        ///
                         if(userId!="")
                         {
                             teacherclass.removeAll();
                             teacherclass.clearFilter();
+                            console.log('teacher filter');
                             teacherclass.filter(
                                 [
                                     {propety:"userID",value:userId}
