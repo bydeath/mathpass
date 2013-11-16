@@ -3023,8 +3023,8 @@ function btndisab(bdi)
 		GetBrowserElement("btn_submit").style.color="#a5a5a5";
 		GetBrowserElement("btn_save").disabled=true;
 		GetBrowserElement("btn_save").style.color="#a5a5a5";
-		GetBrowserElement("btn_close").disabled=true;
-		GetBrowserElement("btn_close").style.color="#a5a5a5";
+		//GetBrowserElement("btn_close").disabled=true;
+		//GetBrowserElement("btn_close").style.color="#a5a5a5";
 	}else
 	{
 		if(GetBrowserElement("btn_next")!=null)
