@@ -21,7 +21,8 @@ if(mysql_num_rows($result)>0){
     while($obj=mysql_fetch_object($result)){
         $arr[]=$obj;
     }
-}
+} 
+$con->Dispose();
 Echo json_encode($arr);
 function formatStr($str)
 {

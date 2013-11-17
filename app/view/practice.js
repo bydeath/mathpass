@@ -19,6 +19,16 @@ Ext.define('MathPASS.view.practice',{
                 items:[
                     {
                         xtype:'button',
+                        text:'Select All',
+                        handler:function(){
+                            if(Ext.getCmp('problemdataview').getSelectionCount()>0)
+                                Ext.getCmp('problemdataview').deselectAll();
+                            else
+                                Ext.getCmp('problemdataview').selectAll();
+                        }
+                    },
+                    {
+                        xtype:'button',
                         align:'right',
                         id:'button_takepractice',
                         text:'Take this practice'
@@ -48,8 +58,8 @@ Ext.define('MathPASS.view.practice',{
                         flex: 8
                     },
                     {
-                   xtype:'spacer',
-                   flex:1
+                        xtype:'spacer',
+                        flex:1
                     },
                     {
                         xtype: 'problemdataview',

@@ -33,6 +33,7 @@ if(mysql_num_rows($result)>0){
         $arr[]=$obj;
     }
 }
+$con->Dispose();
 Echo json_encode($arr);
 function formatStr($str)
 {

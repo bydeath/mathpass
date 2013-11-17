@@ -14,7 +14,25 @@ Ext.define('MathPASS.view.exportgrade',{
             {
                 xtype:'titlebar',
                 dock:'top',
-                title:'Export student grades'
+                items:[
+                {
+                    xtype:'button',
+                    text:'Select All',
+                    id:'selectallassignment',
+                    handler:function(){
+                        if(Ext.getCmp('assignmentdataview').getSelectionCount()>0)
+                            Ext.getCmp('assignmentdataview').deselectAll();
+                        else
+                            Ext.getCmp('assignmentdataview').selectAll();
+                    }
+                },
+                {
+                    xtype:'button',
+                    text:'view the grade',
+                    id:'viewgrade',
+                    align:'right',
+                }
+                ]
             },
             {
                 xtype:'selectfield',
@@ -28,19 +46,20 @@ Ext.define('MathPASS.view.exportgrade',{
             {
                 styleHtmlContent: true,
                 html: [
-                    "<div><h4>Step 2:Select Assignments</h4></div>"
+                    "<div><h4>Please Select Assignments</h4></div>"
                 ]
             },
             {
                 xtype: 'dataview',
                 id:'assignmentdataview',
                 store:'Assignment_teacher',
+                mode:'multi',
                 baseCls:'assignment',
                 flex:'3',
                 items:[
                     {
 
-                        xtype:"panel",
+                        xtype:'panel',
                         docked:'top',
                         layout:'hbox',
                         items:[
@@ -67,13 +86,14 @@ Ext.define('MathPASS.view.exportgrade',{
                 //height:200,
             },
             {
-                xtype:'panel',
+                xtype:'formpanel',
+                id:'displayType',
                 flex:'3',
                 items: [
                     {
                         styleHtmlContent: true,
                         html: [
-                            "<div><h4>Step 3:Select Display Format</h4></div>"
+                            "<div><h4>Please Select Display Format</h4></div>"
                         ]
                     },
                     {
@@ -97,11 +117,6 @@ Ext.define('MathPASS.view.exportgrade',{
                     }
                 ]  
             },
-            {
-                xtype:'button',
-                text:'view the grade',
-                id:'viewgrade'
-            }
         ]
     }
 });

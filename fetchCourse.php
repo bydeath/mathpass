@@ -15,6 +15,7 @@ if(mysql_num_rows($result)>0){
       $arr[]=$obj;
  }
 }
+$con->Dispose();
 
 //$arr = array ('a'=>1,'b'=>2,'c'=>3,'d'=>4,'e'=>5);
 Echo json_encode($arr);
