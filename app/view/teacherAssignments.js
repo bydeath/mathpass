@@ -93,6 +93,16 @@ Ext.define('MathPASS.view.teacherAssignments',{
                         xtype:'container',
                         baseCls:'assignment-title1',
                         html:'Shared'
+                    },
+                    {
+                        xtype:'container',
+                        baseCls:'assignment-title1',
+                        html:'Edit'
+                    },
+                    {
+                        xtype:'container',
+                        baseCls:'assignment-title1',
+                        html:'Delete'
                     }
                 ]
             },
@@ -108,6 +118,8 @@ Ext.define('MathPASS.view.teacherAssignments',{
                     '<div>{startDate}</div>',
                     '<div>{dueDate}</div>',
                     '<div>{shared}</div>',
+                    '<div><input type="button" class="normal_btn" id="editBtn" value=" Edit "/></div>',
+                    '<div><input type="button" class="normal_btn" id="deleteBtn" value=" Delete "/></div>',
                     '</div>'
                 ),
             }
