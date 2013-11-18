@@ -1,6 +1,10 @@
 <?
 include_once("databaseManager.php");
 $con=new DatabaseManager();
+$arr[] = array(
+    'courseId' =>-1,
+    'title' =>'选择'
+); 
 	$sql="SELECT courseId,title,days,room";
 	$sql.=" FROM courses";
 if($_SERVER["REQUEST_METHOD"]=="GET")

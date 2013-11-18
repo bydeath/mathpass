@@ -8,14 +8,22 @@ Ext.define('MathPASS.view.exportgrade',{
     xtype:'exportgradeview',
     config:{
         layout:{
-            type:'vbox'
+            type:'fit'
         },
         items:[
             {
                 xtype:'titlebar',
                 dock:'top',
                 items:[
-                {
+                    {
+                        xtype:'selectfield',
+                        id:'classforteacSelectfield',
+                        name:'class',
+                        valueField:'courseId',
+                        displayField:'title',
+                        store:'Class'
+                    },
+                    {
                     xtype:'button',
                     text:'Select All',
                     id:'selectallassignment',
@@ -35,27 +43,12 @@ Ext.define('MathPASS.view.exportgrade',{
                 ]
             },
             {
-                xtype:'selectfield',
-                id:'classforteacSelectfield',
-                name:'class',
-                valueField:'courseId',
-                label:'Select Class',
-                displayField:'title',
-                store:'Class'
-            },
-            {
-                styleHtmlContent: true,
-                html: [
-                    "<div><h4>Please Select Assignments</h4></div>"
-                ]
-            },
-            {
                 xtype: 'dataview',
                 id:'assignmentdataview',
                 store:'Assignment_teacher',
                 mode:'multi',
                 baseCls:'assignment',
-                flex:'3',
+                //flex:'3',
                 items:[
                     {
 
@@ -86,9 +79,10 @@ Ext.define('MathPASS.view.exportgrade',{
                 //height:200,
             },
             {
-                xtype:'formpanel',
+                xtype:'panel',
                 id:'displayType',
-                flex:'3',
+                //flex:'3',
+                docked:'bottom',
                 items: [
                     {
                         styleHtmlContent: true,

@@ -1,30 +1,115 @@
 /**
- * Created with JetBrains WebStorm.
- * User: yangruiyang
- * Date: 13-8-20
- * Time: 下午3:13
- * To change this template use File | Settings | File Templates.
- */
+* Created with JetBrains WebStorm.
+* User: yangruiyang
+* Date: 13-8-20
+* Time: 下午3:13
+* To change this template use File | Settings | File Templates.
+*/
 Ext.define('MathPASS.view.teacherAssignments',{
     extend:'Ext.Panel',
     xtype:'teacherAssignmentsview',
     requires: [
-        'Ext.TitleBar'
+        'Ext.TitleBar',
+        'MathPASS.store.Class'
     ],
     config:{
         id:'teacherAssignmentsview',
-        scroll: 'vertical',
+        layout:'fit',
         items:[
             {
-                xtype: 'titlebar',
-                docked: 'top',
-                title: 'MathPASS Welcome'
+                xtype:'panel',
+                layout:'hbox',
+                docked:'top',
+                items:[
+                    {
+                        xtype: 'toolbar',
+                        docked: 'top',
+                        title: 'MathPASS Welcome',
+                        items:[{
+                            xtype:'selectfield',
+                            id:'sel_class',
+                            name:'class',
+                            placeHolder:'Select Class',
+                            valueField:'courseId',
+                            displayField:'title',
+                            store:'Class',
+                            listeners:{
+                                change:function(select,newValue,oldValue){ 
+                                    var userId="";
+                                    var userInfoData=Ext.getStore('UserInfo');
+                                    console.log('userinfo',userInfoData);
+                                    if(null!=userInfoData.getAt(0)){
+                                        userId = userInfoData.getAt(0).get('userId');
+                                    };
+                                    Ext.getCmp('assignmentdatav').getStore().clearFilter();                                     
+                                    Ext.getCmp('assignmentdatav').getStore().filter('userid',userId);                            
+                                    Ext.getCmp('assignmentdatav').getStore().filter('classid',newValue);                            
+                                    Ext.getCmp('assignmentdatav').getStore().load();
+                                    if(newValue==-1)
+                                          Ext.getCmp('addBtn').setDisabled(true);
+                                    else
+                                        Ext.getCmp('addBtn').setDisabled(false);
+                                } 
+                            } 
+                        },
+                        {
+                            xtype:'button',
+                            id:'addBtn',
+                            iconMask:true,
+                            iconCls: 'add',
+                            disabled: true,
+                            handler:function(){
+                                //Ext.Viewport.add(formpanel);
+                                //var student = Ext.create('Student',{number:'',
+                                    //    name: '',age:0,phone:'' }); 
+                                    //    formpanel.setRecord(student);
+                                    //    formpanel.show();
+                            }
+                        }
+                        ]
+
+                    },
+                    {
+                        xtype:'container',
+                        baseCls:'assignment-title1',
+                        html:'Assignment Title'
+                    },
+                    {
+                        xtype:'container',
+                        baseCls:'assignment-title1',
+                        html:'Type'
+                    },
+                    {
+                        xtype:'container',
+                        baseCls:'assignment-title1',
+                        html:'Start Date'
+                    },
+                    {
+                        xtype:'container',
+                        baseCls:'assignment-title1',
+                        html:'Due Date'
+                    },
+                    {
+                        xtype:'container',
+                        baseCls:'assignment-title1',
+                        html:'Shared'
+                    }
+                ]
             },
             {
-                styleHtmlContent: true,
-                html: [
-                    "<div style='padding: 10px; -webkit-border-radius: 7px; background-color: rgba(255,255,255,0.5);'><p><h3>Your Assignments</h3></p>Below you will find a list of all your assignments. If you would like to import a shared assignment from another teacher, click on the Shared Assignments item in the sub menu . To delete an assignment click on the trash can icon beside the assignment's name. If you would like to modify an assignment click the modify icon also located beside the assignment's name. If you would like to create a new assignment, you may do so by clicking on the Add Assignment item in the sub menu.</div>"
-                ]
+                xtype:'dataview',
+                id:'assignmentdatav',
+                store:'Assignment_teacher',
+                itemTpl: 
+                new Ext.XTemplate(
+                    '<div class="students">',
+                    '<div>{assignmentTitle}</div>',
+                    '<div>{assignmentType}</div>',
+                    '<div>{startDate}</div>',
+                    '<div>{dueDate}</div>',
+                    '<div>{shared}</div>',
+                    '</div>'
+                ),
             }
         ]
     }
