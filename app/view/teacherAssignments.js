@@ -59,11 +59,6 @@ Ext.define('MathPASS.view.teacherAssignments',{
                             iconCls: 'add',
                             disabled: true,
                             handler:function(){
-                                //Ext.Viewport.add(formpanel);
-                                //var student = Ext.create('Student',{number:'',
-                                    //    name: '',age:0,phone:'' }); 
-                                    //    formpanel.setRecord(student);
-                                    //    formpanel.show();
                             }
                         }
                         ]

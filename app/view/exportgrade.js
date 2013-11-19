@@ -79,7 +79,7 @@ Ext.define('MathPASS.view.exportgrade',{
                 //height:200,
             },
             {
-                xtype:'panel',
+                xtype:'formpanel',
                 id:'displayType',
                 //flex:'3',
                 docked:'bottom',

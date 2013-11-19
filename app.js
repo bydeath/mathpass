@@ -58,6 +58,7 @@ Ext.application({
         'ChapterListItem',
         'ProblemList',
         'ProblemListItem',
+        'ProblemSet'
         ],
         models:[
                 'login',
@@ -75,7 +76,8 @@ Ext.application({
         'login',
         'contactus',
         'practice',
-    'exportgrade'
+    'exportgrade',
+    'TeachersAssignments'
                 ],
         stores:[
         'userinfo',

@@ -43,6 +43,7 @@ Ext.define('MathPASS.controller.exportgrade', {
             }
             aid=aid.substr(0,aid.length-1);
             console.log('aid;',aid);
+            console.log('rad:',this.getRadioDisplayType());
             var dt=this.getRadioDisplayType().getValues().displayformat;
             console.log('dt;',dt);
             var src="<iframe width=\"100%\" height=\"600\" name=\"takeAssignmentDo1\" marginwidth=\"0\" marginheight=\"0\" frameborder=\"0\" src=\"http://localhost/mathpass/exportgradeview.php?cid="+cid+"&aid="+aid+"&dt="+dt+"\"></iframe>";
