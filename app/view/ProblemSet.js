@@ -3,7 +3,9 @@ Ext.define('MathPASS.view.ProblemSet',{
     xtype:'ProblemSet',
     requires: [
         'Ext.TitleBar',
-        'MathPASS.model.pcourse'
+        'MathPASS.model.pcourse',
+        'MathPASS.model.Chapter',
+        'MathPASS.model.Problem'
     ],
     config:{
         id:'ProblemSet',
@@ -17,15 +19,33 @@ Ext.define('MathPASS.view.ProblemSet',{
                     {
                         xtype: 'toolbar',
                         docked: 'top',
-                        items:[{
+                        items:[
+                        {
                             xtype:'selectfield',
-                            id:'pcourse_problemset',
+                            id:'pcourse_selectfield',
                             placeHolder:'Select Course',
                             name:'pcourse',
                             valueField:'pcourseid',
                             label:'Course:',
                             displayField:'name',
                             store:'pcourse',
+                            listeners:{
+                                change:function(select,newValue,oldValue){ 
+                                   Ext.getCmp('chapter_selectfield').getStore().clearFilter();                                     
+                                   Ext.getCmp('chapter_selectfield').getStore().filter('pcourseid',newValue);                                     
+                                   Ext.getCmp('chapter_selectfield').getStore().load();                                     
+                                } 
+                            } 
+                        },
+                        {
+                            xtype:'selectfield',
+                            id:'chapter_selectfield',
+                            //placeHolder:'Select Course',
+                            name:'chapter',
+                            valueField:'chapterId',
+                            label:'Chapter:',
+                            displayField:'title',
+                            store:'Chapter',
                             listeners:{
                                 change:function(select,newValue,oldValue){ 
                                 //    var userId="";
@@ -50,10 +70,54 @@ Ext.define('MathPASS.view.ProblemSet',{
                     },
                 ]
             },
+{
+    xtype:'panel',
+    layout:'hbox',
+    items:[
             {
                 xtype:'dataview',
                 id:'problem',
+                store:'Problem',
+                flex:2,
+                height:500,
+                itemTpl: 
+                new Ext.XTemplate(
+                    '<div class="problems">',
+                    '<div>{title}</div>',
+                    '</div>'
+                ),
+            },
+            {
+                xtype:'panel',
+                layout:'hbox',
+                //centered:true,
+                items:[
+            {
+            xtype:'button',
+            iconCls:'arrow_right'
+            },
+            {
+            xtype:'button',
+            iconCls:'arrow_left'
             }
+                    
+                    ]
+            },
+            {
+                xtype:'dataview',
+                id:'problem2',
+                store:'Problem',
+                flex:2,
+                height:500,
+                itemTpl: 
+                new Ext.XTemplate(
+                    '<div class="problems">',
+                    '<div>{title}</div>',
+                    '</div>'
+                ),
+            }
+        ]
+}
         ]
     }
 });
