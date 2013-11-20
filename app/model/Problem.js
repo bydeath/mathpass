@@ -8,7 +8,7 @@ Ext.define('MathPASS.model.Problem', {
     
     config: {
 			fields: [
-			{ name: 'number'},{name: 'title'}
+			{ name: 'number'},{name: 'title'},{name:'count',type:'int',defaultValue:1}
 			],        
     }
 });

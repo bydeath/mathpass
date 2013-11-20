@@ -61,7 +61,7 @@ Ext.define('MathPASS.controller.TeachersAssignments', {
                         {
                             text: '取消',
                             handler: function() {
-                                formpanel.hide();
+                                formpanel.destroy();
                             }
                         }]
                 },
