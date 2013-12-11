@@ -25,13 +25,11 @@ Ext.define('MathPASS.controller.practice',{
         }
     },
     courseChanged:function(select,newValue,oldValue){
-        console.log("course chenged");
         this.getChapterdataview().getStore().clearFilter();
         this.getChapterdataview().getStore().filter('pcourseid',newValue);                        
         this.getChapterdataview().getStore().load();
     },
     chapterTaped:function(dataview,index,item,record,e){
-        console.log('store=',this.getProblemdataview().getStore());
         this.getProblemdataview().getStore().removeAll();
         this.getProblemdataview().getStore().clearFilter();
         this.getProblemdataview().getStore().filter('pcourseId',this.getCourseSelectfield().getRecord().get('pcourseid'));

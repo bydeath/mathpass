@@ -35,6 +35,9 @@
     },
     "native.properties.merge": {
       "07d1a1ee61bad4a32197342ffc02dcc8402c1813": "eJytkUtuwzAMRPc6BYF0mQjoAbwouuqiH7S+AGPRDhtZFPRxEBS5e+kkBtIC3dU7znCeiPEKmv/8zAraHWfo2RPEJBM7yoABZKKUdIAoHAr0ksBRj9UXmDAxbr3uqcKBHHAABW0re2cVEikVPmPcEso3ujUr3X56fnt9bx9eWtjAB4Vuh/A4Ojiw9zBSGgiOUhOoHgZlHbjsgEsGOQRwNXEYoMYhoTsDoRXASdjpvYVCYVwonYTec6fJiz/ifs56VHMN+UAU53l5p4jCylLJTP7fvhVIYW4PjpX1uDEmypklmEt9N4rVjebeXNZtLloneglkRwzcUy5NSZXMNSixaCY3d18/ZutoWwfrOM+U0/q37WUYKP3tX//fyWCMduQuiRftPNmAIzVFr9D27Gc2Ju85qlp4ok3Ebo8DNT36TOYb0kbmEg\u003d\u003d"
+    },
+    "{controllerFileName}.js.tpl.merge": {
+      "7cd8d1cf12515ca525732931d6b775e3f7924ad9": "eJx1j0EKwyAQRfeeYnYmIMk+XZXSbe8gOjaCGSWxbSB49xoTQij0L8ZR3p8/3ufYaDSWsOKL8hRH7xyODzngFKTC1Py8Ji5gYZCFc0TSHfB7niFDaG4HyEUhSsl2Y5/dblo1opnO9wNdlcTR7sH/UXYylNK2SuZ8DZ8eCWKPcA3BWSWj9QR2AidfpHrUIi8x+DeCNUA+AiFq1GXGhnRg8rHaqvy1+rTCFspSfWFfyCxXmA\u003d\u003d"
     }
   },
   "targets": {
@@ -276,6 +279,17 @@
         "library": "core",
         "controllerNamespace": "MathPASS.controller",
         "appStores": ""
+      }
+    },
+    "app/controller/ProblemSet.js": {
+      "source": "{controllerFileName}.js.tpl.merge",
+      "version": "7cd8d1cf12515ca525732931d6b775e3f7924ad9",
+      "parameters": {
+        "appName": "MathPASS",
+        "controllerName": "ProblemSet",
+        "controllerFileName": "ProblemSet",
+        "name": "ProblemSet",
+        "controllerNamespace": "MathPASS.controller"
       }
     }
   }

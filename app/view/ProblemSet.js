@@ -8,7 +8,6 @@ Ext.define('MathPASS.view.ProblemSet',{
         'MathPASS.model.Problem'
     ],
     config:{
-        id:'ProblemSet',
         layout:'fit',
         items:[
             {
@@ -64,13 +63,13 @@ Ext.define('MathPASS.view.ProblemSet',{
             {
                 xtype:'panel',
                 layout:'hbox',
+                id:'panelProblem',
                 items:[
                     {
                         xtype:'dataview',
                         id:'problem_dataview',
-                        mode:'multi',
                         store:'Problem',
-                        flex:2,
+                        flex:1,
                         height:500,
                         itemTpl: 
                         new Ext.XTemplate(
@@ -79,49 +78,56 @@ Ext.define('MathPASS.view.ProblemSet',{
                             '</div>'
                         ),
                     },
-                    {
-                        xtype:'panel',
-                        layout:'hbox',
-                        items:[
-                            {
-                                xtype:'button',
-                                iconCls:'arrow_right',
-                                handler:function(){
-                                var problemSelected=Ext.getCmp('problem_dataview').getSelection();
-                                console.log('selection:',problemSelected);
-                                    //var problemSelected = Ext.create("Ext.data.Store", {
-                                    //    model: "MathPASS.model.Problem",
-                                    //    //problemSelected.add
-                                    //});
-                                    Ext.getCmp('problemSelected_dataview').getStore().setData(problemSelected);
-                                    Ext.getCmp('problemSelected_dataview').getStore().load();
-                                    console.log('problem;',Ext.getCmp('problem_dataview').getStore());
-                                    console.log('selected;',Ext.getCmp('problemSelected_dataview').getStore());
-                                }
-                            },
-                            {
-                                xtype:'button',
-                                iconCls:'arrow_left',
-                                handler:function(){
-                                    var dataRemove= Ext.getCmp('problemSelected_dataview').getSelection();
-                                    Ext.getCmp('problemSelected_dataview').getStore().remove(dataRemove);
-                                    Ext.getCmp('problemSelected_dataview').getStore().load();
-                                }
-                            }
+                    //{
+                    //    xtype:'panel',
+                    //    layout:'hbox',
+                    //    items:[
+                    //        {
+                    //            xtype:'button',
+                    //            iconCls:'arrow_right',
+                    //            handler:function(){
+                    //            var problemSelected=Ext.getCmp('problem_dataview').getSelection();
+                    //            console.log('selection:',problemSelected);
+                    //                //var problemSelected = Ext.create("Ext.data.Store", {
+                    //                //    model: "MathPASS.model.Problem",
+                    //                //    //problemSelected.add
+                    //                //});
+                    //                Ext.getCmp('problemSelected_dataview').getStore().setData(problemSelected);
+                    //                Ext.getCmp('problemSelected_dataview').getStore().load();
+                    //                console.log('problem;',Ext.getCmp('problem_dataview').getStore());
+                    //                console.log('selected;',Ext.getCmp('problemSelected_dataview').getStore());
+                    //            }
+                    //        },
+                    //        {
+                    //            xtype:'button',
+                    //            iconCls:'arrow_left',
+                    //            handler:function(){
+                    //                var dataRemove= Ext.getCmp('problemSelected_dataview').getSelection();
+                    //                console.log('prepr:',Ext.getCmp('problemSelected_dataview').getStore());
+                    //                console.log('se:',dataRemove);
+                    //                Ext.getCmp('problemSelected_dataview').getStore().each(function(record)
+                    // {
+                    //    console.log(" - delete record");
+                    //    Ext.getCmp('problemSelected_dataview').getStore().remove(record);
+                    // }, this);
+                    //                Ext.getCmp('problemSelected_dataview').getStore().load();
+                    //                console.log('nowpr:',Ext.getCmp('problemSelected_dataview').getStore());
+                    //            }
+                    //        }
 
-                        ]
-                    },
+                    //    ]
+                    //},
                     {
                         xtype:'dataview',
                         id:'problemSelected_dataview',
                         store:Ext.create('Ext.data.Store',{model:'MathPASS.model.Problem',autoLoad:true}),
-                        mode:'multi',
-                        flex:2,
+                        flex:1,
                         height:500,
                         itemTpl: 
                         new Ext.XTemplate(
-                            '<div class="problems">',
+                            '<div class="problems">', 
                             '<div>{title}</div>',
+                    '<div><input type="number" name="count" id="problem_count" min="1" max="10" value={count}/></div>',
                             '</div>'
                         ),
                     }

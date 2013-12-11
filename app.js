@@ -77,7 +77,8 @@ Ext.application({
         'contactus',
         'practice',
     'exportgrade',
-    'TeachersAssignments'
+    'TeachersAssignments',
+    'ProblemSet'
                 ],
         stores:[
         'userinfo',

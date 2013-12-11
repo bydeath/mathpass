@@ -1,11 +1,12 @@
 Ext.define('MathPASS.controller.TeachersAssignments', {
     extend: 'Ext.app.Controller',
-
     config: {
         refs: {
             teachersAssignment:'teacherAssignmentsview',
-            teachersclass:'#teachersclass',
-            addBtn:'#addBtn'
+            teachersass:'#assignmentdatav',
+            addBtn:'#addBtn',
+            problemSet:'ProblemSet',
+            problemSelected:'#problemSelected_dataview'
         },
         control: {
             addBtn:{
@@ -34,17 +35,24 @@ Ext.define('MathPASS.controller.TeachersAssignments', {
                         {
                             text: '确定',           
                             handler: function() {
-                                //    var currentStudent =Ext.create('Student');
-                                //    formpanel.updateRecord(currentStudent);
+                                var currentAssignment =Ext.create('MathPASS.model.Assignment');
+                                //var problemField=formpanel.getComponent('problemFieldset');
+                                //var panelProblem=problemField.getComponent('panelProblem');
+                                //var panelproblemSelected=panelProblem.getComponent('problemSelected_dataview');
+                                console.log('problems:',Ext.getCmp('problemSelected_dataview').getStore().getData());
+                                    formpanel.updateRecord(currentAssignment);
+                                    console.log('currentAss:',currentAssignment);
                                 //    var errors = currentStudent.validate();   
                                 //    if(errors.isValid())
                                     //    {    
-                                        //       currentStudent.setClassinfo(Ext.ComponentManager.get('sel_class').getValue(),function() {
-                                            //           studentStore.load();
-                                            //           dataview.refresh();
-        //       });
-        //       formpanel.hide();                   
-        //    }
+                                        currentAssignment.save({
+                                            success:function() {
+                                                this.getTeachersass.getStore().load();
+                                                this.getTeachersass.refresh();
+                                            }
+                                        });
+                                        //       formpanel.hide();                   
+                                        //    }
         //    else {
             //        currentStudent.reject();
             //        var message = "";
@@ -70,7 +78,7 @@ Ext.define('MathPASS.controller.TeachersAssignments', {
                     title:'Assignment Information',
                     items: [{
                         xtype:'textfield',
-                        name:'title',
+                        name:'assignmentTitle',
                         label:'Title',
                         maxLength:10,
                         placeHolder:'Please enter assignment title',
@@ -79,6 +87,7 @@ Ext.define('MathPASS.controller.TeachersAssignments', {
                     },
                     {
                     xtype: 'selectfield',
+                    name:'assignmentType',
                     label: 'Type',
                     options: [
                         {text: 'Homework',  value: '1'},
@@ -88,6 +97,7 @@ Ext.define('MathPASS.controller.TeachersAssignments', {
                     },
                     {
                     xtype: 'selectfield',
+                    name:'takes',
                     label: 'Takes',
                     options: [
                         {text: 'unlimited',  value: '0'},
@@ -124,6 +134,7 @@ Ext.define('MathPASS.controller.TeachersAssignments', {
                 {
                     xtype:'fieldset',
                     title:'Class Assignments',
+                    name:'courses',
                     items:[
                     {
                         xtype: 'checkboxfield',
@@ -154,6 +165,8 @@ Ext.define('MathPASS.controller.TeachersAssignments', {
                 {
                     xtype:'fieldset',
                     title:'Problem Set',
+                    name:'problem',
+                    id:'problemFieldset',
                     items:[
                     {
                         xtype:'ProblemSet'
