@@ -29,7 +29,7 @@ include_once("databaseManager.php");
   $ds=$con->Query($sql);
   $anamearr=array();
   $i=0;
-  $grades.='<p>';
+  $grades='<p>';
   $grades.=' <h3>The students\' grades in the class <b>'.strtoupper($ctitle).'</b></h3>';
 	$grades.='<table width="90%" border="0" cellpadding="2" cellspacing="0">';
 	$grades.='<tr>';
